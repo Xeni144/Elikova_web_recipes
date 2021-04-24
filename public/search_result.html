@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/search_result.css"/>
+    <title>Результаты поиска</title>
+</head>
+<body>
+    <header>
+        <!-- лого, профиль, поиск, сортировка, фильтрация-->
+        <div class="line-group">
+            <img src="images/logo_1.svg" class="img_1" alt="Приложение рецепты">
+            <div class="icon">
+                <a href="profil.html" id="h_profile"><img src="images/profile-02.svg" class="img_pr" alt="Профиль"></a>
+            </div>
+        </div>
+        <div class="line-group">
+            <div class="search_l">
+                <label for="search_rec"></label>
+                <input type="search" name="search" id="search_rec">
+                <div>
+                    <button type="button" id="lupa"></button>
+                    <img src="images/lupppa-03.svg" class="img_po" alt="Поиск">
+                </div>
+            </div>
+            <div class="icon1">
+                <button type="button" id="filter"></button>
+                <img src="images/filter-06.svg" class="img_filt" alt="Фильтрация">
+            </div>
+            <div class="icon2">
+                <button type="button" id="sort"></button>
+                <img src="images/sort-07.svg" class="img_sort" alt="Сортировка">
+            </div>
+            <div class="icon3">
+                <a href="new_recipe.html" id="add_rec"><img src="images/plus-05.svg" class="img_pl" alt="Добавить рецепт"></a>
+            </div>
+        </div>
+        <div class="line-group">
+            <a href="javascript:history.back()" class="back"><img src="images/back-04.svg" class="img_back" alt="Назад"></a>
+            <h1>Результаты поиска</h1>
+        </div>
+    </header>
+    <ul>
+        <li>
+            <div class="food_name">
+                <a href="show_recipe.html" class="group">Манная каша</a>
+                <div class="food_nov">
+                    <a href="edit_recipe.html" class="sett"><img src="images/edit-09.svg" class="img_edit" alt="Редактировать"></a>
+                    <div class="sett">
+                        <button type="button"></button>
+                        <img src="images/like-11.svg" class="img_like" alt="Нравится">
+                    </div>
+                    <div class="sett">
+                        <button type="button"></button>
+                        <img src="images/share-08.svg" class="img_share" alt="Поделиться">
+                    </div>
+                </div>
+            </div>
+            <img src="images/960m.jpg" class="food_img" alt="картинка">
+        </li>
+        <li>
+            <div class="food_name">
+                <a href="show_recipe.html" class="group">Манты</a>
+                <div class="food_nov">
+                    <a href="edit_recipe.html" class="sett"><img src="images/edit-09.svg" class="img_edit" alt="Редактировать"></a>
+                    <div class="sett">
+                        <button type="button"></button>
+                        <img src="images/like-11.svg" class="img_like" alt="Нравится">
+                    </div>
+                    <div class="sett">
+                        <button type="button"></button>
+                        <img src="images/share-08.svg" class="img_share" alt="Поделиться">
+                    </div>
+                </div>
+            </div>
+            <img src="images/mant.jpg" class="food_img" alt="картинка">
+        </li>
+    </ul>
+</body>
+</html>

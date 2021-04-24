@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/structure.css"/>
+    <title>Состав</title>
+</head>
+<body>
+    <header>
+        <div class="line-group">
+            <img src="images/logo_1.svg" class="img_1" alt="Приложение рецепты">
+            <div class="icon">
+                <a href="profil.html" id="h_profile"><img src="images/profile-02.svg" class="img_pr" alt="Профиль"></a>
+            </div>
+        </div>
+        <div class="line-group">
+            <div class="search_l">
+                <label for="search_rec"></label>
+                <input type="search" name="search" id="search_rec" class="search_rec">
+                <div>
+                    <button type="button" id="lupa"></button>
+                    <img src="images/lupppa-03.svg" class="img_po" alt="Поиск">
+                </div>
+            </div>
+        </div>
+        <div class="line-group">
+            <a href="javascript:history.back()" class="back"><img src="images/back-04.svg" class="img_back" alt="Назад"></a>
+            <h1>Состав</h1>
+        </div>
+    </header>
+    <form action="" method="post" name="structure">
+        <ul id="struct_list">
+            <li>
+                <div class="li-group">
+                    <label for="name_s">Название</label>
+                    <input type="text" name="name_s" id="name_s" class="name_s">
+                </div>
+                <div class="li-group">
+                    <label for="count">Кол-во</label>
+                    <input type="number" name="count" id="count" class="count">
+                </div>
+                <div class="li-group">
+                    <label for="ed">Ед.изм.</label>
+                    <select name="select_ed" id="ed">
+                        <option value="value1" selected>мл.</option>
+                        <option value="value3">л.</option>
+                        <option value="value4">ст.</option>
+                        <option value="value5">ч.л</option>
+                        <option value="value6">с.л</option>
+                        <option value="value7">д.л</option>
+                        <option value="value8">гр.</option>
+                        <option value="value9">кг.</option>
+                        <option value="value10">уп.</option>
+                        <option value="value11">шт.</option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <div class="li-group">
+                    <label for="name_s1">Название</label>
+                    <input type="text" name="name_s" id="name_s1" class="name_s">
+                </div>
+                <div class="li-group">
+                    <label for="count1">Кол-во</label>
+                    <input type="number" name="count" id="count1" class="count">
+                </div>
+                <div class="li-group">
+                    <label for="ed1">Ед. изм.</label>
+                    <!-- мл, л, гр, кг, ч.л, ст.л, уп.(упаковка), шт.(штука)-->
+                    <!-- <input type="text" name="ed" id="ed1"> -->
+                    <select name="select_ed" id="ed1">
+                        <option value="value1" selected>мл.</option>
+                        <option value="value3">л.</option>
+                        <option value="value4">ст.</option>
+                        <option value="value5">ч.л</option>
+                        <option value="value6">с.л</option>
+                        <option value="value7">д.л</option>
+                        <option value="value8">гр.</option>
+                        <option value="value9">кг.</option>
+                        <option value="value10">уп.</option>
+                        <option value="value11">шт.</option>
+                    </select>
+                </div>
+            </li>
+            <li id="button_li">
+                <button type="submit">Сохранить состав</button>
+            </li>
+        </ul>
+    </form>
+    <script>
+        (function()
+        {
+            'use strict';
+            
+            /** @type {HTMLFormElement} */
+            const form = document.forms.namedItem( 'structure' );
+            form.addEventListener(
+                'submit',
+                async ( event ) =>
+                {
+                    event.preventDefault();
+
+                    const nameField = form.elements.namedItem( 'name_s' );
+                    const countField = form.elements.namedItem( 'count' );
+                    const edField = form.elements.namedItem( 'select_ed' );
+                    
+                    const data = {
+                        name_s: nameField.value,
+                        count: countField.value,
+                        select_ed: edField.value,
+                    };
+                    
+                    await fetch(
+                        form.action,
+                        {
+                            method: form.method,
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify( data ),
+                        },
+                    );
+                    
+                    nameField.value = '';
+                    countField.value = '';
+                    edField.value = '';
+                }
+            );
+        })();
+    </script>
+</body>
+</html>
+<!-- скрытый текст через visualy-hidden-->

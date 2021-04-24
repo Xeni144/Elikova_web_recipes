@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/registration.css"/>
+    <title>Регистрация</title>
+</head>
+<body>
+    <header>
+        <!-- alt нормальная фраза ссылку убрать -->
+        <img src="images/logo_1.svg"  alt="Приложение рецепты" class="img_1">
+        <h1>Регистрация</h1>
+    </header>
+
+    <form  name="registration" action="/api/form/registration" method="post">
+        <ul>
+            <li>
+                <label for="name">Имя</label>
+                <input type="text" name="name" id="name" required>
+            </li>
+            <li>
+                <label for="reg_login">Логин</label>
+                <input type="text" name="login" id="reg_login" required>
+            </li>
+            <li>
+                <label for="reg_email">Почта</label>
+                <input type="email" name="email" id="reg_email" required>
+            </li>
+            <li>
+                <label for="reg_password">Пароль</label>
+                <input type="password" name="password" id="reg_password" required>
+            </li>
+            <li>
+                <label for="reg_password2">Повторите пароль</label>
+                <input type="password" name="password_rep" id="reg_password2" required>
+            </li>
+            <li>
+                <button type="submit">Зарегистрироваться</button>
+            </li>
+        </ul>
+    </form>
+    <script>
+        ( function()
+        {
+            'use strict';
+            
+            /** @type {HTMLFormElement} */
+            const form = document.forms.namedItem( 'registration' );
+            form.addEventListener(
+                'submit',
+                async ( event ) =>
+                {
+                    event.preventDefault();
+                    
+                    const nameField = form.elements.namedItem( 'name' );
+                    const loginField = form.elements.namedItem( 'login' );
+                    const emailField = form.elements.namedItem( 'email' );
+                    const passwordField = form.elements.namedItem( 'password' );
+                    const repeatpasswordField = form.elements.namedItem( 'password_rep' );
+
+                    //if ( passwordField != repeatpasswordField )
+
+                    
+                    const data = {
+                        name: nameField.value,
+                        login: loginField.value,
+                        email: emailField.value,
+                        password: passwordField.value,
+                        password_rep: repeatpasswordField.value,
+                    };
+                    
+                    await fetch(
+                        form.action,
+                        {
+                            method: form.method,
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify( data ),
+                        },
+                    );
+                    
+                    nameField.value = '';
+                    loginField.value ='';
+                    emailField.value ='';
+                    passwordField.value = '';
+                    repeatpasswordField.value = '';
+                }
+            );
+        } )();
+    </script>
+</body>
+</html>

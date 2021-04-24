@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/log_in.css"/>
+    <title>Вход</title>
+</head>
+<body>
+    <header>
+        <img src="images/logo_1.svg"  alt="Приложение рецепты" class="img_1">
+        <h1>Вход</h1>
+    </header>
+    
+    <form name="log_in" action="/api/form/log_in" method="post">
+        <ul>
+            <li>
+                <label for="log_inn">Логин</label>
+                <input type="text" name="log_email_name" id="log_inn" required>
+            </li>
+            <li class="passw1">
+                <label for="log_in_password">Пароль</label>
+                <input type="password" name="password" id="log_in_password" required>
+            </li>
+            <li class="href1">
+                <!-- страница восстановления пароля -->
+                <a href="recovery_password.html">Забыли пароль?</a>
+            </li>
+            <li class="href1">
+                <a href="registration.html">Регистрация</a>
+            </li>
+            <li>
+                <button type="submit">Войти</button>
+            </li>
+        </ul>
+    </form>
+    <script>
+        ( function()
+        {
+            'use strict';
+            
+            /** @type {HTMLFormElement} */
+            const form = document.forms.namedItem( 'log_in' );
+            form.addEventListener(
+                'submit',
+                async ( event ) =>
+                {
+                    event.preventDefault();
+                    
+                    const nameField = form.elements.namedItem( 'log_email_name' );
+                    const passwordField = form.elements.namedItem( 'password' );
+                    
+                    const data = {
+                        log_email_name: nameField.value,
+                        password: passwordField.value,
+                    };
+                    
+                    await fetch(
+                        form.action,
+                        {
+                            method: form.method,
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify( data ),
+                        },
+                    );
+                    
+                    nameField.value = '';
+                    passwordField.value = '';
+                }
+            );
+        } )();
+    </script>
+</body>
+</html>

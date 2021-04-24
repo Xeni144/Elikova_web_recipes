@@ -1,0 +1,92 @@
+body{
+    position: relative;
+    width: 414px;
+    min-height: 920px;
+    margin: 0;
+    justify-content: center;
+}
+
+header{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 89px;
+    top: 30px;
+}
+
+h1{
+    font-family: sans-serif, Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    margin: 0;
+
+    color: #000000;
+}
+
+.img_1{
+    width: 236px;
+    height: 63px;
+}
+
+label{
+    font-family: sans-serif, Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+
+    margin-bottom: 5px;
+
+    color: #000000;
+}
+
+input{
+    width: 365px;
+    height: 50px;
+
+    padding-left: 5px;
+    font-family: sans-serif, Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+
+    background: #FFFFFF;
+    border: 1px solid #9F2762;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+ul{
+    position: absolute;
+    list-style: none;
+    width: 365px;
+    top: 146px;
+    padding: 0 25px;
+}
+
+li {
+    flex-direction: column;
+    margin-bottom: 26px;
+}
+
+button{
+    width: 365px;
+    height: 50px;
+    background: #9F2762;
+    border-radius: 15px;
+    border-style: none;
+    margin-top: 33px;
+
+    font-family: sans-serif, Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+
+    color: #FFFFFF;
+}

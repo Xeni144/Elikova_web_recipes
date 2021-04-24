@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/new_recipe.css"/>
+    <title>Новый рецепт</title>
+</head>
+<body>
+    <header>
+        <div class="line-group">
+            <img src="images/logo_1.svg" class="img_1" alt="Приложение рецепты">
+            <div class="icon">
+                <a href="profil.html"><img src="images/profile-02.svg" class="img_pr" alt="Профиль"></a>
+            </div>
+        </div>
+        <div class="line-group">
+            <div class="search_l">
+                <label for="search_rec"></label>
+                <input type="search" name="search" id="search_rec">
+                <div>
+                    <button type="button" id="lupa"></button>
+                    <img src="images/lupppa-03.svg" class="img_po" alt="Поиск">
+                </div>
+            </div>
+        </div>
+        <div class="line-group">
+            <a href="javascript:history.back()" class="back"><img src="images/back-04.svg" class="img_back" alt="Назад"></a>
+            <div id="recipe"><div>
+        </div>
+    </header>
+   <!-- как-то выводить рецепт, возможно показывать текстовую страницу -->
+   <div id="show_rec"></div>
+
+   <script src="/public/js/show_recipe.jsx"></script>
+</body>
+</html>

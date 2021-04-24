@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/profil.css"/>
+    <title>Профиль</title>
+</head>
+<body>
+    <header>
+        <div class="line-group">
+            <img src="images/logo_1.svg" class="img_1" alt="Приложение рецепты">
+            <div class="icon">
+                <a href="profil.html" id="h_profile"><img src="images/profile-02.svg" class="img_pr" alt="Профиль"></a>
+            </div>
+        </div>
+        <div class="line-group">
+            <div class="search_l">
+                <label for="search_rec"></label>
+                <input type="search" name="search" id="search_rec">
+                <div>
+                    <button type="button" id="lupa"></button>
+                    <img src="images/lupppa-03.svg" class="img_po" alt="Поиск">
+                </div>
+            </div>
+        </div>
+        <div class="line-group">
+            <a href="javascript:history.back()" class="back"><img src="images/back-04.svg" class="img_back" alt="Назад"></a>
+            <h1>Мой профиль</h1>
+        </div>
+    </header>
+    <form action="" method="post" name="main_profile">
+        <ul>
+            <li>
+                <label for="name">Имя</label>
+                <input type="text" name="name" id="name" required>
+            </li>
+            <li>
+                <label for="reg_login">Логин</label>
+                <input type="text" name="login" id="reg_login" required minlength="4">
+            </li>
+            <li>
+                <label for="reg_name">Почта</label>
+                <input type="email" name="email" id="reg_name" required>
+            </li>
+            <li>
+                <button type="submit">Сохранить изменения</button>
+            </li>
+            <li>
+                <label for="current_password">Текущий пароль</label>
+                <input type="password" name="password" id="current_password" required>
+            </li>
+            <li>
+                <label for="new_password">Новый пароль</label>
+                <input type="password" name="password" id="new_password">
+            </li>
+            <li>
+                <label for="new_password2">Повторите пароль</label>
+                <input type="password" name="password2" id="new_password2">
+            </li>
+            <li>
+                <button type="submit">Сменить пароль</button>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>
