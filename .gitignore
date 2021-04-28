@@ -63,5 +63,4 @@ typings/
 # Data files
 /registration.json
 /logon.json
-/recipe.json
-/recipe.json
+/recipes.json

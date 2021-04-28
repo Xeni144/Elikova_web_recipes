@@ -8,7 +8,6 @@
 </head>
 <body>
     <header>
-        <!-- alt нормальная фраза ссылку убрать -->
         <img src="images/logo_1.svg"  alt="Приложение рецепты" class="img_1">
         <h1>Регистрация</h1>
     </header>
@@ -40,55 +39,6 @@
             </li>
         </ul>
     </form>
-    <script>
-        ( function()
-        {
-            'use strict';
-            
-            /** @type {HTMLFormElement} */
-            const form = document.forms.namedItem( 'registration' );
-            form.addEventListener(
-                'submit',
-                async ( event ) =>
-                {
-                    event.preventDefault();
-                    
-                    const nameField = form.elements.namedItem( 'name' );
-                    const loginField = form.elements.namedItem( 'login' );
-                    const emailField = form.elements.namedItem( 'email' );
-                    const passwordField = form.elements.namedItem( 'password' );
-                    const repeatpasswordField = form.elements.namedItem( 'password_rep' );
-
-                    //if ( passwordField != repeatpasswordField )
-
-                    
-                    const data = {
-                        name: nameField.value,
-                        login: loginField.value,
-                        email: emailField.value,
-                        password: passwordField.value,
-                        password_rep: repeatpasswordField.value,
-                    };
-                    
-                    await fetch(
-                        form.action,
-                        {
-                            method: form.method,
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify( data ),
-                        },
-                    );
-                    
-                    nameField.value = '';
-                    loginField.value ='';
-                    emailField.value ='';
-                    passwordField.value = '';
-                    repeatpasswordField.value = '';
-                }
-            );
-        } )();
-    </script>
+    <script type="module" src="scripts/indexRegistration.js"></script>
 </body>
 </html>

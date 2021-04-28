@@ -29,106 +29,43 @@
             <h1>Состав</h1>
         </div>
     </header>
-    <form action="" method="post" name="structure">
-        <ul id="struct_list">
+    <form action="/api/form/structure" method="post" name="structure" id="struct_form"> 
+        <ul>
             <li>
-                <div class="li-group">
-                    <label for="name_s">Название</label>
-                    <input type="text" name="name_s" id="name_s" class="name_s">
-                </div>
-                <div class="li-group">
-                    <label for="count">Кол-во</label>
-                    <input type="number" name="count" id="count" class="count">
-                </div>
-                <div class="li-group">
-                    <label for="ed">Ед.изм.</label>
-                    <select name="select_ed" id="ed">
-                        <option value="value1" selected>мл.</option>
-                        <option value="value3">л.</option>
-                        <option value="value4">ст.</option>
-                        <option value="value5">ч.л</option>
-                        <option value="value6">с.л</option>
-                        <option value="value7">д.л</option>
-                        <option value="value8">гр.</option>
-                        <option value="value9">кг.</option>
-                        <option value="value10">уп.</option>
-                        <option value="value11">шт.</option>
-                    </select>
-                </div>
+                <fieldset form="struct_form">
+                    <div>
+                        <label for="name_s">Название</label>
+                        <input type="text" name="name_s" class="name_s">
+                    </div>
+                    <div>
+                        <label for="count">Кол-во</label>
+                        <input type="number" name="count" class="count" min="0" step="0.1">
+                    </div>
+                    <div>
+                        <label for="select_ed">Ед.изм.</label>
+                        <select name="select_ed">
+                            <option value="value1" selected>мл.</option>
+                            <option value="value3">л.</option>
+                            <option value="value4">ст.</option>
+                            <option value="value5">ч.л</option>
+                            <option value="value6">с.л</option>
+                            <option value="value7">д.л</option>
+                            <option value="value8">гр.</option>
+                            <option value="value9">кг.</option>
+                            <option value="value10">уп.</option>
+                            <option value="value11">шт.</option>
+                        </select>
+                    </div>
+                </fieldset>
             </li>
             <li>
-                <div class="li-group">
-                    <label for="name_s1">Название</label>
-                    <input type="text" name="name_s" id="name_s1" class="name_s">
-                </div>
-                <div class="li-group">
-                    <label for="count1">Кол-во</label>
-                    <input type="number" name="count" id="count1" class="count">
-                </div>
-                <div class="li-group">
-                    <label for="ed1">Ед. изм.</label>
-                    <!-- мл, л, гр, кг, ч.л, ст.л, уп.(упаковка), шт.(штука)-->
-                    <!-- <input type="text" name="ed" id="ed1"> -->
-                    <select name="select_ed" id="ed1">
-                        <option value="value1" selected>мл.</option>
-                        <option value="value3">л.</option>
-                        <option value="value4">ст.</option>
-                        <option value="value5">ч.л</option>
-                        <option value="value6">с.л</option>
-                        <option value="value7">д.л</option>
-                        <option value="value8">гр.</option>
-                        <option value="value9">кг.</option>
-                        <option value="value10">уп.</option>
-                        <option value="value11">шт.</option>
-                    </select>
-                </div>
+                <button type="button">Добавить пункт</button>
             </li>
-            <li id="button_li">
+            <li>
                 <button type="submit">Сохранить состав</button>
             </li>
         </ul>
-    </form>
-    <script>
-        (function()
-        {
-            'use strict';
-            
-            /** @type {HTMLFormElement} */
-            const form = document.forms.namedItem( 'structure' );
-            form.addEventListener(
-                'submit',
-                async ( event ) =>
-                {
-                    event.preventDefault();
-
-                    const nameField = form.elements.namedItem( 'name_s' );
-                    const countField = form.elements.namedItem( 'count' );
-                    const edField = form.elements.namedItem( 'select_ed' );
-                    
-                    const data = {
-                        name_s: nameField.value,
-                        count: countField.value,
-                        select_ed: edField.value,
-                    };
-                    
-                    await fetch(
-                        form.action,
-                        {
-                            method: form.method,
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify( data ),
-                        },
-                    );
-                    
-                    nameField.value = '';
-                    countField.value = '';
-                    edField.value = '';
-                }
-            );
-        })();
-    </script>
+    </form> 
+    <script type="module" src="scripts/indexStructure.js"></script>
 </body>
 </html>
-<!-- скрытый текст через visualy-hidden-->

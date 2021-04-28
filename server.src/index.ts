@@ -16,7 +16,7 @@ app.get(
 	'/',
 	( _request: Express.Request, response: Express.Response ) =>
 	{
-		response.sendFile( rootPath + '/public/category.html')
+		response.sendFile( rootPath + '/public/log_in.html')
 	},
 );
 
@@ -30,6 +30,15 @@ type FormLoginData = {
 	log_email_name: string;
 	password: string;
 };
+
+app.get(
+	'/category',
+	( _request: Express.Request, response: Express.Response ) =>
+	{
+		response.sendFile( rootPath + '/public/category.html')
+	},
+);
+
 
 app.post(
 	'/api/form/log_in',
@@ -97,7 +106,7 @@ app.post(
 			'utf8',
 		);
 
-		 response.send( 'OK' );
+		response.send( 'OK' );
 	},
 );
 

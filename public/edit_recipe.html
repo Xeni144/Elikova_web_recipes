@@ -2,9 +2,100 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/new_recipe.css"/>
     <title>Title</title>
 </head>
 <body>
- <!-- то же что и в новом только заполнено -->
+    <header>
+        <div class="line-group">
+            <img src="images/logo_1.svg" class="img_1" alt="Приложение рецепты">
+            <div class="icon">
+                <a href="profil.html"><img src="images/profile-02.svg" class="img_pr" alt="Профиль"></a>
+            </div>
+        </div>
+        <div class="line-group">
+            <div class="search_l">
+                <label for="search_rec"></label>
+                <input type="search" name="search" id="search_rec">
+                <div>
+                    <button type="button" id="lupa"></button>
+                    <img src="images/lupppa-03.svg" class="img_po" alt="Поиск">
+                </div>
+            </div>
+        </div>
+        <div class="line-group">
+            <a href="javascript:history.back()" class="back"><img src="images/back-04.svg" class="img_back" alt="Назад"></a>
+            <h1>Новый рецепт</h1>
+        </div>
+    </header>
+    <form action="/api/form/edit_rec" method="post" name="new_rec">
+        <ul>
+            <li>
+                <label for="name">Название</label>
+                <input type="text" name="name" id="name" required>
+            </li>
+            <li>
+                <label for="categ">Категория</label>
+                <select name="select_cat" id="categ" required>
+                    <option value="value1" selected>Любимые рецепты</option>
+                    <option value="value2">Салаты</option>
+                    <option value="value3">Супы</option>
+                    <option value="value4">Гарниры</option>
+                    <option value="value5">Основные блюда</option>
+                    <option value="value6">Закуски</option>
+                    <option value="value7">Десерты</option>
+                    <option value="value8">Напитки</option>
+                    <option value="value9">Соусы/заправки</option>
+                    <option value="value10">Выпечка</option>
+                    <option value="value11">Торты</option>
+                    <option value="value12">Каши</option>
+                    <option value="value13">Запеканки</option>
+                    <option value="value14">Блины/оладьи/сырники</option>
+                </select>
+            </li>
+            <li>
+                <label for="method">Способ приготовления</label>
+                <select name="select_method" id="method" required>
+                    <option value="value0" selected></option>
+                    <option value="value1">Варка</option>
+                    <option value="value2">Жарка</option>
+                    <option value="value3">Тушение</option>
+                    <option value="value4">Запекание</option>
+                    <option value="value5">На пару</option>
+                    <option value="value6">На гриле</option>
+                    <option value="value7">Охлаждение</option>
+                    <option value="value8">Копчение</option>
+                    <option value="value9">Поширование</option>
+                    <option value="value10">Вяление</option>
+                    <option value="value11">Сушение</option>
+                    <option value="value12">Засахаривание</option>
+                    <option value="value13">Маринование</option>
+                    <option value="value14">Соление</option>
+                    <option value="value15">Квашение</option>
+                </select>
+            </li>
+            <li>
+                <label for="time">Время приготовления</label>
+                <input type="time" name="time" id="time">
+            </li>
+            <li>
+                <label for="button_struct">Состав</label>
+                <!-- кнопка открывает новый экран не поле ввода, текстом тек значение -- href="structure.html -->
+                <div>
+                    <a href="structure.html" id="button_struct" class="button_struct"></a> 
+                    <!-- кнопка по нажатию которой скрывается данная форма и появляется новая -->
+                </div>
+            </li>
+            <li>
+                <label for="process">Приготовление</label>
+                <textarea name="process" id="process" class="process"></textarea>
+                <!-- <input type="text" name="process" id="process"> -->
+            </li>
+            <li>
+                <button type="submit">Сохранить рецепт</button>
+            </li>
+        </ul>
+    </form>
 </body>
 </html>
