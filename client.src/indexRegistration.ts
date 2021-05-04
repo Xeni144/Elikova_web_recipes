@@ -4,7 +4,7 @@
     
 
     const form = document.forms.namedItem( 'registration' );
-    form.addEventListener(
+    form?.addEventListener(
         'submit',
         async ( event:Event ) =>
         {

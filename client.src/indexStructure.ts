@@ -1,6 +1,5 @@
 import { addElem } from './newPointStructure.js';
 import { elemStructure} from './structureElements.js';
-import { clear} from './clearStructureInput.js';
 
 (function()
 {
@@ -8,7 +7,7 @@ import { clear} from './clearStructureInput.js';
 	
 	const form = document.forms.namedItem( 'structure' );
 
-	form.addEventListener(
+	form?.addEventListener(
 		'submit',
 		async ( event:Event ) =>
 		{
@@ -28,8 +27,7 @@ import { clear} from './clearStructureInput.js';
 					body: JSON.stringify( data ),
 				},
 			);
-			
-			clear();
+						
             document.location.href = "javascript:history.back()";
 		}
 	);
